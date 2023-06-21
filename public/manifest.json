@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "Color Hunter",
+    "version": "1.0.0",
+    "action": {
+        "default_popup": "index.html"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "assets/color-scanner.js"
+            ]
+        }
+    ],
+    "permissions": [
+        "tabs"
+    ]
+}
