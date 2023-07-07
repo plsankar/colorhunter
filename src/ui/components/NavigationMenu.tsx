@@ -1,7 +1,7 @@
-import { FC, Fragment, ReactNode } from "react";
+import { FC, Fragment } from "react";
 import { useAppContext } from "../contexts/AppContextProvider";
 import { Dialog, Transition } from "@headlessui/react";
-import { Github, LucideIcon, MessageSquare, Star, ThumbsUp } from "lucide-react";
+import { Github, LucideIcon, MessageSquare, Star } from "lucide-react";
 import { openTab } from "../utils";
 import { User2 } from "lucide-react";
 

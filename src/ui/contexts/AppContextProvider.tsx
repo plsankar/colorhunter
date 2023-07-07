@@ -14,6 +14,7 @@ const AppContext = createContext<AppContext>({
     isMenuOpen: false,
 });
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useAppContext = () => useContext(AppContext);
 
 const AppContextProvider: FC<{ children: ReactNode }> = ({ children }) => {
