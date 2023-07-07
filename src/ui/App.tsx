@@ -5,6 +5,7 @@ import Color from "color";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { getActiveTabId } from "./utils";
 import { toast } from "react-hot-toast";
+import Header from "./components/Header";
 
 function App() {
     const [colors, setColors] = useState<TColor[]>([]);
@@ -52,9 +53,7 @@ function App() {
 
     return (
         <div className="relative flex flex-col">
-            <div className="sticky top-0 py-5 bg-white border-b shadow-sm">
-                <h1 className="text-xl text-center">ColorHunter</h1>
-            </div>
+            <Header />
             {colors.length > 0 && (
                 <div className="flex flex-col gap-5 p-5">
                     {colors.map((color, index) => (
