@@ -33,7 +33,7 @@ const NavigationMenu = () => {
                             leaveFrom="translate-x-0"
                             leaveTo="-translate-x-full"
                         >
-                            <Dialog.Panel className="w-[80%] max-w-md p-4 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-e-xl flex flex-col justify-between">
+                            <Dialog.Panel className="w-[80%] max-w-md p-2 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-e-xl flex flex-col justify-between">
                                 <div className="flex flex-col gap-2">
                                     <NavigationMenuItem
                                         icon={Github}
@@ -52,13 +52,9 @@ const NavigationMenu = () => {
                                         title="Feedback"
                                         action={() => openTab("https://twitter.com/plsankar96")}
                                     />
-                                    <NavigationMenuItem
-                                        icon={User2}
-                                        title="Developer: @plsankar96"
-                                        action={() => openTab("https://twitter.com/plsankar96")}
-                                    />
+                                    <NavigationMenuItem icon={User2} title="@plsankar96" action={() => openTab("https://twitter.com/plsankar96")} />
                                 </div>
-                                <div className="text-gray-500 ">V1.0.0</div>
+                                <div className="text-gray-500 ">V{chrome.runtime.getManifest().version}</div>
                             </Dialog.Panel>
                         </Transition.Child>
                     </div>
@@ -71,7 +67,7 @@ const NavigationMenu = () => {
 const NavigationMenuItem: FC<{ icon: LucideIcon; title: string; action?: () => void }> = ({ icon: Icon, title, action }) => {
     return (
         <button
-            className="flex flex-row gap-4 px-4 py-2 transition-all duration-300 rounded hover:bg-orange-100 hover:text-orange-500"
+            className="flex flex-row gap-4 px-3 py-2 transition-all duration-300 rounded hover:bg-orange-100 hover:text-orange-500"
             title={title}
             onClick={action}
         >
