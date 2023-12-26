@@ -15,12 +15,15 @@
         "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
     },
     "dependencies": {
+        "@headlessui/react": "^1.7.15",
         "@types/chrome": "^0.0.237",
         "color": "^4.2.3",
+        "lucide-react": "^0.259.0",
         "react": "^18.2.0",
         "react-copy-to-clipboard": "^5.1.0",
         "react-dom": "^18.2.0",
-        "react-hot-toast": "^2.4.1"
+        "react-hot-toast": "^2.4.1",
+        "react-tooltip": "^5.18.0"
     },
     "devDependencies": {
         "@crxjs/vite-plugin": "^2.0.0-beta.18",

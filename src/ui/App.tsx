@@ -5,6 +5,8 @@ import Color from "color";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { getActiveTabId } from "./utils";
 import { toast } from "react-hot-toast";
+import Header from "./components/Header";
+import ErrorPanel from "./components/ErrorPanel";
 
 function App() {
     const [colors, setColors] = useState<TColor[]>([]);
@@ -17,7 +19,7 @@ function App() {
             return;
         }
         if (!activeTab.url?.startsWith("http")) {
-            setError("Sorry!, This page is not scannable");
+            setError("Sorry, This page is not scannable");
             return;
         }
         chrome.tabs.sendMessage<EventBlast, ColorScannerResponse>(activeTab.id, { action: "color-scanner" }, function (response) {
@@ -51,10 +53,8 @@ function App() {
     }, []);
 
     return (
-        <div className="relative flex flex-col">
-            <div className="sticky top-0 py-5 bg-white border-b shadow-sm">
-                <h1 className="text-xl text-center">ColorHunter</h1>
-            </div>
+        <div className="relative flex flex-col min-h-screen">
+            <Header />
             {colors.length > 0 && (
                 <div className="flex flex-col gap-5 p-5">
                     {colors.map((color, index) => (
@@ -62,7 +62,7 @@ function App() {
                     ))}
                 </div>
             )}
-            {error && <p className="p-5 text-center rounded">{error}</p>}
+            {error && <ErrorPanel message={error} />}
         </div>
     );
 }

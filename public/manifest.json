@@ -2,12 +2,12 @@
     "manifest_version": 3,
     "name": "Color Hunter",
     "description": "Export the color palette of a website in a single click",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "icons": {
-        "16": "dist/icon16.png",
-        "32": "dist/icon32.png",
-        "48": "dist/icon48.png",
-        "128": "dist/icon128.png"
+        "16": "icon16.png",
+        "32": "icon32.png",
+        "48": "icon48.png",
+        "128": "icon128.png"
     },
     "action": {
         "default_popup": "index.html"
@@ -24,7 +24,6 @@
     ],
     "permissions": [
         "tabs",
-        "<all_urls>",
-        "activeTab"
+        "<all_urls>"
     ]
 }
