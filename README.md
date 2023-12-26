@@ -7,7 +7,6 @@ Chrome Extenstion to export the color palette of a website in a single click.
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 ![GitHub issues](https://img.shields.io/github/issues/plsankar/colorhunter)
 ![GitHub package.json dynamic](https://img.shields.io/github/package-json/version/plsankar/colorhunter)
-![Chrome Web Store](https://img.shields.io/chrome-web-store/users/5e010de7-ba11-4173-b83f-e357ad9a1ff4)
 ![Chrome Web Store](https://img.shields.io/chrome-web-store/stars/bpgkpfghcehfbffdfhelbooocbafaakd)
 ![Static Badge](https://img.shields.io/badge/Chrome_Web_Store-Featured-blue?style=for-the-badge&logo=Google%20Chrome&logoColor=yellow)
 
