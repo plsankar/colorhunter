@@ -12,7 +12,7 @@ Chrome Extenstion to export the color palette of a website in a single click.
 
 ## Installation
 
-[Chrome Web Store](https://chrome.google.com/webstore/detail/color-hunter/bpgkpfghcehfbffdfhelbooocbafaakd/)
+[![Chrome Web Store](chrome-web-store.png)](https://chrome.google.com/webstore/detail/color-hunter/bpgkpfghcehfbffdfhelbooocbafaakd)
 
 ## Screenshots
 
