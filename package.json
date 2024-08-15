@@ -26,7 +26,7 @@
         "react-tooltip": "^5.18.0"
     },
     "devDependencies": {
-        "@crxjs/vite-plugin": "^2.0.0-beta.18",
+        "@crxjs/vite-plugin": "^2.0.0-beta.23",
         "@types/color": "^3.0.3",
         "@types/node": "^20.11.30",
         "@types/react": "^18.0.37",
