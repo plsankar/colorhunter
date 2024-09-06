@@ -4,13 +4,21 @@ function findAlColors() {
     console.log(allElments.length);
     allElments.forEach((element) => {
         const style = window.getComputedStyle(element);
-        if (!colors.includes(style.color)) {
-            colors.push(style.color);
-        }
-        if (!colors.includes(style.backgroundColor)) {
-            colors.push(style.backgroundColor);
-        }
-        if (!colors.includes(style.fill)) {
+        colors.push(style.color);
+        colors.push(style.backgroundColor);
+        colors.push(style.borderColor);
+        colors.push(style.outlineColor);
+        try {
+            const textShadowColors = style.textShadow.split(",").map((shadow) => shadow.trim().split(" ")[0]);
+            textShadowColors.forEach((color) => colors.push(color));
+        } catch (_ignore) {}
+
+        try {
+            const boxShadowColors = style.boxShadow.split(",").map((shadow) => shadow.trim().split(" ")[0]);
+            boxShadowColors.forEach((color) => colors.push(color));
+        } catch (_ignore) {}
+
+        if ("fill" in style) {
             colors.push(style.fill);
         }
     });
