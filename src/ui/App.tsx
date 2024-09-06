@@ -3,7 +3,7 @@ import { FC, useEffect, useState } from "react";
 
 import Color from "color";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-import { getActiveTabId } from "./utils";
+import { getActiveTab } from "./utils";
 import { toast } from "react-hot-toast";
 import Header from "./components/Header";
 import ErrorPanel from "./components/ErrorPanel";
@@ -14,7 +14,7 @@ function App() {
 
     const scanTheTabForColors = async () => {
         const activeTab = await getActiveTab();
-        if (!activeTab || !activeTab.id) {
+        if (!activeTab || activeTab.id === undefined) {
             setError("Sorry, Unable to scan the current page, please try refreshing the page");
             return;
         }
@@ -24,7 +24,11 @@ function App() {
         }
         chrome.tabs.sendMessage<EventBlast, ColorScannerResponse>(activeTab.id, { action: "color-scanner" }, function (response) {
             if (!response || !response.colors) {
-                setError("Sorry, Unable to scan the current page, please try refreshing the page");
+                chrome.scripting.executeScript({
+                    target: { tabId: activeTab.id! },
+                    files: ["assets/color-scanner.js"],
+                });
+                scanTheTabForColors();
                 return;
             }
             const sortedColors = response.colors
