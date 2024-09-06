@@ -10,6 +10,9 @@ function findAlColors() {
         if (!colors.includes(style.backgroundColor)) {
             colors.push(style.backgroundColor);
         }
+        if (!colors.includes(style.fill)) {
+            colors.push(style.fill);
+        }
     });
     return colors;
 }
