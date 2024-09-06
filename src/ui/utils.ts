@@ -1,4 +1,4 @@
-export function getActiveTabId() {
+export function getActiveTab() {
     return new Promise<chrome.tabs.Tab | null>((resolve) => {
         chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
             const activeTab = tabs[0];

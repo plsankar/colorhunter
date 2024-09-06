@@ -13,7 +13,7 @@ function App() {
     const [error, setError] = useState<string | null>(null);
 
     const scanTheTabForColors = async () => {
-        const activeTab = await getActiveTabId();
+        const activeTab = await getActiveTab();
         if (!activeTab || !activeTab.id) {
             setError("Sorry, Unable to scan the current page, please try refreshing the page");
             return;
