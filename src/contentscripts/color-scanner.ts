@@ -1,27 +1,30 @@
 function findAlColors() {
-    const colors: string[] = [];
+    let colors: string[] = [];
     const allElments = document.querySelectorAll<HTMLElement>("*");
-    console.log(allElments.length);
     allElments.forEach((element) => {
         const style = window.getComputedStyle(element);
         colors.push(style.color);
-        colors.push(style.backgroundColor);
-        colors.push(style.borderColor);
-        colors.push(style.outlineColor);
-        try {
-            const textShadowColors = style.textShadow.split(",").map((shadow) => shadow.trim().split(" ")[0]);
-            textShadowColors.forEach((color) => colors.push(color));
-        } catch (_ignore) {}
 
-        try {
-            const boxShadowColors = style.boxShadow.split(",").map((shadow) => shadow.trim().split(" ")[0]);
-            boxShadowColors.forEach((color) => colors.push(color));
-        } catch (_ignore) {}
+        const borderColors = style.borderColor.split(/(?=rgba?\()/g);
+        colors.push(...borderColors);
+
+        const outlineColors = style.outlineColor.split(/(?=rgba?\()/g);
+        colors.push(...outlineColors);
+
+        const backgroundColors = style.backgroundColor.split(/(?=rgba?\()/g);
+        colors.push(...backgroundColors);
 
         if ("fill" in style) {
             colors.push(style.fill);
         }
     });
+
+    colors = colors.map((color) => color.trim());
+    colors = colors.filter((color) => color.length > 0 && color !== "none" && color.includes("rgb"));
+    colors = colors.filter(function (item, pos, self) {
+        return self.indexOf(item) == pos;
+    });
+
     return colors;
 }
 
