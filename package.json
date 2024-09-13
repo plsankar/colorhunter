@@ -15,7 +15,7 @@
         "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
     },
     "dependencies": {
-        "@headlessui/react": "^1.7.15",
+        "@headlessui/react": "^2.1.8",
         "@types/chrome": "^0.0.263",
         "color": "^4.2.3",
         "lucide-react": "^0.363.0",
